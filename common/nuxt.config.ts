@@ -3,6 +3,7 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@nuxtjs/i18n',
         '@nuxtjs/tailwindcss',
+        'nuxt-primevue',
     ],
 
     typescript: {
@@ -39,5 +40,24 @@ export default defineNuxtConfig({
         langDir: 'lang',
         defaultLocale: 'en',
         detectBrowserLanguage: false
+    },
+
+    primevue: {
+        options: {
+            ripple: false,
+        },
+
+        components: {
+            prefix: 'Prime',
+            include: ['Menu', 'Card', 'Chip', 'InlineSvg', 'Steps', 'Dialog', 'Avatar', 'Column', 'Button', 'Message', 'Divider', 'TabView', 'Checkbox', 'Textarea', 'Calendar', 'Dropdown', 'TabPanel', 'Password', 'Skeleton', 'InputText', 'DataTable', 'InputSwitch', 'MultiSelect', 'ProgressBar', 'InputNumber', 'ConfirmPopup', 'OverlayPanel', 'Rating']
+        },
+
+        composables: {
+            include: ['useConfirm']
+        },
+
+        directives: {
+            exclude: ['Tooltip']
+        },    
     },
 })
